@@ -6,11 +6,20 @@ import android.view.LayoutInflater
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.custom_view.view.*
+import kotlinx.android.synthetic.main.progressbar.*
+import kotlin.concurrent.thread
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+//        thread(start=true){
+//            Thread.sleep(3000)
+//            runOnUiThread {
+//                showProgress(false)
+//            }
+//        }
 
         val fragmentList = listOf(fragment1(), fragment2())
 
@@ -40,4 +49,14 @@ class MainActivity : AppCompatActivity() {
         }
         return tabView
     }
+    //밑의 함수는 ProgressLayout이 보였다 사라지는 함수
+//    fun showProgress(show : Boolean) {
+//            if (show) {
+//                progressLayout.visibility = View.VISIBLE
+//            } else {
+//                progressLayout.visibility = View.GONE
+//            }
+//    }
+
+
 }
